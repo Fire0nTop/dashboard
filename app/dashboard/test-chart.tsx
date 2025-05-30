@@ -9,7 +9,6 @@ import {
 } from "recharts"
 
 import {
-    Card,
     CardHeader,
     CardTitle,
     CardDescription,
@@ -32,6 +31,7 @@ import {
 } from "@/components/ui/chart"
 
 import { useSettings } from "@/app/settings/SettingsContext"
+import {GlassCard} from "@/components/custom/glass-card";
 
 interface Hour {
     time: string
@@ -163,7 +163,7 @@ export function TemperatureChart() {
     })
 
     return (
-        <Card>
+        <GlassCard>
             <CardHeader className="flex flex-col sm:flex-row items-center justify-between">
                 <div>
                     <CardTitle>Temperature Forecast</CardTitle>
@@ -219,7 +219,7 @@ export function TemperatureChart() {
                             <Line
                                 dataKey="temperature"
                                 type="monotone"
-                                stroke="var(--color-chart-1)"
+                                stroke="var(--color-chart-3)"
                                 strokeWidth={2}
                                 dot={false}
                             />
@@ -253,14 +253,14 @@ export function TemperatureChart() {
                             <Line
                                 dataKey="max"
                                 type="monotone"
-                                stroke="var(--color-chart-2)"
+                                stroke="var(--color-chart-1)"
                                 strokeWidth={2}
                                 dot={false}
                             />
                             <Line
                                 dataKey="min"
                                 type="monotone"
-                                stroke="var(--color-chart-1)"
+                                stroke="var(--color-chart-3)"
                                 strokeWidth={2}
                                 dot={false}
                             />
@@ -273,6 +273,6 @@ export function TemperatureChart() {
                     Showing temperature data for {LOCATION}
                 </div>
             </CardFooter>
-        </Card>
+        </GlassCard>
     )
 }

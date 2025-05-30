@@ -5,7 +5,7 @@ import Link from "next/link";
 import {GlassCard} from "@/components/custom/glass-card";
 import {CardContent} from "@/components/ui/card";
 import {useSettings} from "@/app/settings/SettingsContext";
-import {Button} from "@/components/ui/button";
+import {Button} from "@/components/custom/button";
 
 export default function SettingsPage() {
 

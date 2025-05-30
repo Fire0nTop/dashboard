@@ -1,6 +1,7 @@
 import {DashboardCard} from "@/app/dashboard/dashboard-card";
 import {ModeToggle} from "@/components/custom/mode-toggle";
 import {TemperatureChart} from "@/app/dashboard/test-chart";
+import Clock from "@/app/dashboard/clock";
 
 export function Dashboard() {
     return (
@@ -16,6 +17,9 @@ export function Dashboard() {
             </DashboardCard>
             <DashboardCard>
                 <ModeToggle></ModeToggle>
+            </DashboardCard>
+            <DashboardCard>
+                <Clock></Clock>
             </DashboardCard>
         </div>
     )

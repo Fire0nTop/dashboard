@@ -73,7 +73,7 @@ export const settingsConfig: SettingsConfig = {
                         label: "Theme",
                         type: "select",
                         options: ["light", "dark", "system"],
-                        defaultValue: "system",
+                        defaultValue: "light",
                     },
                     {key: "bg-url", label: "Background Image Url", type: "input", defaultValue: "https://images.pexels.com/photos/7919/pexels-photo.jpg?cs=srgb&dl=pexels-life-of-pix-7919.jpg&fm=jpg"},
                 ]
@@ -89,7 +89,7 @@ export const settingsConfig: SettingsConfig = {
                 title: "weatherapi.com",
                 settings: [
                     {key: "weatherapi-key", label: "API key", type: "input", defaultValue: ""},
-                    {key: "weatherapi-location", label: "Location", type: "input", defaultValue: ""}
+                    {key: "weatherapi-location", label: "Location", type: "input", defaultValue: "Hamburg"}
                 ]
             }
         }

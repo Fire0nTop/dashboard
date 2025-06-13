@@ -1,3 +1,4 @@
+"use client"
 import clsx from 'clsx';
 import {useSettings} from "@/context/SettingsContext";
 
@@ -5,7 +6,7 @@ export const BackgroundWrapper = ({
                                       children,
                                       className,
                                   }: {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     className?: string;
 }) => {
     const { settings } = useSettings();

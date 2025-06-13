@@ -1,7 +1,8 @@
 import type {Metadata} from "next";
 import "./globals.css";
-import {ThemeProvider} from "@/components/custom/theme-provider";
-import {SettingsProvider} from "@/app/settings/SettingsContext";
+import {ThemeProvider} from "@/components/custom/ui/theme-provider";
+import {SettingsProvider} from "@/context/SettingsContext";
+import {AuthProvider} from "@/context/AuthContext";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -24,7 +25,9 @@ export default function RootLayout({
             disableTransitionOnChange
         >
             <SettingsProvider>
-                {children}
+                <AuthProvider>
+                    {children}
+                </AuthProvider>
             </SettingsProvider>
         </ThemeProvider>
         </body>

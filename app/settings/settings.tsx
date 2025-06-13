@@ -1,6 +1,6 @@
 "use client";
 import React, { JSX } from "react";
-import { useSettings } from "./SettingsContext";
+import { useSettings } from "@/context/SettingsContext";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "@/components/custom/button";
+import { Button } from "@/components/custom/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { settingsConfig } from "./settings-config";
 import {useTheme} from "next-themes";

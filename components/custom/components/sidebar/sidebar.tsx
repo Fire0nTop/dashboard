@@ -1,6 +1,6 @@
-import {GlassCard} from "@/components/custom/glass-card";
+import {GlassCard} from "@/components/custom/ui/glass-card";
 import {CardContent} from "@/components/ui/card";
-import {ModeToggle} from "@/components/custom/mode-toggle";
+import {ModeToggle} from "@/components/custom/ui/mode-toggle";
 
 export function Sidebar() {
     return (

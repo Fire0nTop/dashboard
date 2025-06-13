@@ -17,7 +17,7 @@ env:
   DEPLOYMENT_FOLDER: out
 
 jobs:
-# Please do not rename this job
+  # Please do not rename this job
   build-project:
     name: build dashboard
     runs-on: ubuntu-latest
@@ -36,12 +36,14 @@ jobs:
         env:
           CI: true
           SITE_URL: ${{ inputs.site-url }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
         run: |
           npm ci
           npm run build
           npm run lint
 
-# Please do not touch the following action
+      # Please do not touch the following action
       - name: Store deployment content
         uses: ionos-deploy-now/artifact-action@v1
         with:

@@ -1,7 +1,7 @@
-import {DashboardCard} from "@/app/dashboard/dashboard-card";
-import {ModeToggle} from "@/components/custom/mode-toggle";
-import {TemperatureChart} from "@/app/dashboard/test-chart";
-import Clock from "@/app/dashboard/clock";
+import {DashboardCard} from "@/components/custom/components/dashboard/dashboard-card";
+import {ModeToggle} from "@/components/custom/ui/mode-toggle";
+import {TemperatureChart} from "@/components/custom/components/dashboard/test-chart";
+import Clock from "@/components/custom/components/dashboard/clock";
 
 export function Dashboard() {
     return (
@@ -12,7 +12,7 @@ export function Dashboard() {
             <DashboardCard link={true} href={"/settings"}>
                 <h1>To Settings</h1>
             </DashboardCard>
-            <DashboardCard link={true} href={"/tests"}>
+            <DashboardCard link={true} href={"/dev"}>
                 <h1>To Tests</h1>
             </DashboardCard>
             <DashboardCard>

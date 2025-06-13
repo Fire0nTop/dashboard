@@ -25,7 +25,10 @@ function SwapyTest() {
 
     const containerRef = useRef<HTMLDivElement>(null)
 
-    useEffect(() => utils.dynamicSwapy(swapyRef.current, items, 'id', slotItemMap, setSlotItemMap), [items])
+    // Fix: Add slotItemMap to the dependency array
+    useEffect(() => {
+        utils.dynamicSwapy(swapyRef.current, items, 'id', slotItemMap, setSlotItemMap)
+    }, [items, slotItemMap])
 
     useEffect(() => {
         swapyRef.current = createSwapy(containerRef.current!, {
@@ -41,6 +44,7 @@ function SwapyTest() {
             swapyRef.current?.destroy()
         }
     }, [])
+
     return (
         <div className="container" ref={containerRef}>
             <div className="items">

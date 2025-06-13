@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/custom/button';
+import { Button } from '@/components/custom/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -219,7 +219,7 @@ export default function BambuApiTestPage() {
                                             />
                                         </div>
                                     </div>
-                                    <ActionButton onClick={handleLogin} loading={!!loading.login}>
+                                    <ActionButton onClick={handleLogin} loading={loading.login}>
                                         Login
                                     </ActionButton>
                                 </div>
@@ -234,7 +234,7 @@ export default function BambuApiTestPage() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                         <ActionButton
                                             onClick={handleRefreshToken}
-                                            loading={!!loading.refresh}
+                                            loading={loading.refresh}
                                         >
                                             Refresh Token
                                         </ActionButton>
@@ -248,14 +248,14 @@ export default function BambuApiTestPage() {
                             <ResultDisplay
                                 data={results.login}
                                 error={errors.login || ''}
-                                loading={!!loading.login}
+                                loading={loading.login}
                                 title="Login Response"
                             />
 
                             <ResultDisplay
                                 data={results.refresh}
                                 error={errors.refresh || ''}
-                                loading={!!loading.refresh}
+                                loading={loading.refresh}
                                 title="Refresh Token Response"
                             />
                         </CardContent>
@@ -271,7 +271,7 @@ export default function BambuApiTestPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                 <ActionButton
                                     onClick={() => handleApiCall('devices', () => bambuApi.getDevices())}
-                                    loading={!!loading.devices}
+                                    loading={loading.devices}
                                     disabled={!isAuthenticated}
                                 >
                                     Get Devices
@@ -279,7 +279,7 @@ export default function BambuApiTestPage() {
 
                                 <ActionButton
                                     onClick={() => handleApiCall('printStatus', () => bambuApi.getPrintStatus())}
-                                    loading={!!loading.printStatus}
+                                    loading={loading.printStatus}
                                     disabled={!isAuthenticated}
                                 >
                                     Get Print Status
@@ -288,7 +288,7 @@ export default function BambuApiTestPage() {
 
                             <ActionButton
                                 onClick={() => handleApiCall('ttcode', () => bambuApi.getTTCode('00M00A280102436'))}
-                                loading={!!loading.ttcode}
+                                loading={loading.ttcode}
                                 disabled={!isAuthenticated}
                             >
                                 Get TTCode (Sample Device ID)
@@ -297,21 +297,21 @@ export default function BambuApiTestPage() {
                             <ResultDisplay
                                 data={results.devices}
                                 error={errors.devices || ''}
-                                loading={!!loading.devices}
+                                loading={loading.devices}
                                 title="Devices Response"
                             />
 
                             <ResultDisplay
                                 data={results.printStatus}
                                 error={errors.printStatus || ''}
-                                loading={!!loading.printStatus}
+                                loading={loading.printStatus}
                                 title="Print Status Response"
                             />
 
                             <ResultDisplay
                                 data={results.ttcode}
                                 error={errors.ttcode || ''}
-                                loading={!!loading.ttcode}
+                                loading={loading.ttcode}
                                 title="TTCode Response"
                             />
                         </CardContent>
@@ -326,7 +326,7 @@ export default function BambuApiTestPage() {
                         <CardContent className="space-y-4">
                             <ActionButton
                                 onClick={() => handleApiCall('tasks', () => bambuApi.getTasks())}
-                                loading={!!loading.tasks}
+                                loading={loading.tasks}
                                 disabled={!isAuthenticated}
                             >
                                 Get Tasks
@@ -335,7 +335,7 @@ export default function BambuApiTestPage() {
                             <ResultDisplay
                                 data={results.tasks}
                                 error={errors.tasks || ''}
-                                loading={!!loading.tasks}
+                                loading={loading.tasks}
                                 title="Tasks Response"
                             />
                         </CardContent>
@@ -350,7 +350,7 @@ export default function BambuApiTestPage() {
                         <CardContent className="space-y-4">
                             <ActionButton
                                 onClick={() => handleApiCall('projects', () => bambuApi.getProjects())}
-                                loading={!!loading.projects}
+                                loading={loading.projects}
                                 disabled={!isAuthenticated}
                             >
                                 Get Projects
@@ -359,7 +359,7 @@ export default function BambuApiTestPage() {
                             <ResultDisplay
                                 data={results.projects}
                                 error={errors.projects || ''}
-                                loading={!!loading.projects}
+                                loading={loading.projects}
                                 title="Projects Response"
                             />
                         </CardContent>
@@ -374,7 +374,7 @@ export default function BambuApiTestPage() {
                         <CardContent className="space-y-4">
                             <ActionButton
                                 onClick={() => handleApiCall('preferences', () => bambuApi.getUserPreferences())}
-                                loading={!!loading.preferences}
+                                loading={loading.preferences}
                                 disabled={!isAuthenticated}
                             >
                                 Get User Preferences
@@ -383,7 +383,7 @@ export default function BambuApiTestPage() {
                             <ResultDisplay
                                 data={results.preferences}
                                 error={errors.preferences || ''}
-                                loading={!!loading.preferences}
+                                loading={loading.preferences}
                                 title="User Preferences Response"
                             />
                         </CardContent>
@@ -399,7 +399,7 @@ export default function BambuApiTestPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                 <ActionButton
                                     onClick={() => handleApiCall('slicerSettings', () => bambuApi.getSlicerSettings('01.03.00.25'))}
-                                    loading={!!loading.slicerSettings}
+                                    loading={loading.slicerSettings}
                                     disabled={!isAuthenticated}
                                 >
                                     Get Slicer Settings
@@ -407,7 +407,7 @@ export default function BambuApiTestPage() {
 
                                 <ActionButton
                                     onClick={() => handleApiCall('slicerResources', () => bambuApi.getSlicerResources())}
-                                    loading={!!loading.slicerResources}
+                                    loading={loading.slicerResources}
                                     disabled={!isAuthenticated}
                                 >
                                     Get Slicer Resources
@@ -417,14 +417,14 @@ export default function BambuApiTestPage() {
                             <ResultDisplay
                                 data={results.slicerSettings}
                                 error={errors.slicerSettings || ''}
-                                loading={!!loading.slicerSettings}
+                                loading={loading.slicerSettings}
                                 title="Slicer Settings Response"
                             />
 
                             <ResultDisplay
                                 data={results.slicerResources}
                                 error={errors.slicerResources || ''}
-                                loading={!!loading.slicerResources}
+                                loading={loading.slicerResources}
                                 title="Slicer Resources Response"
                             />
                         </CardContent>
@@ -439,7 +439,7 @@ export default function BambuApiTestPage() {
                         <CardContent className="space-y-4">
                             <ActionButton
                                 onClick={() => handleApiCall('messages', () => bambuApi.getMessages({ limit: 10 }))}
-                                loading={!!loading.messages}
+                                loading={loading.messages}
                                 disabled={!isAuthenticated}
                             >
                                 Get Messages
@@ -448,7 +448,7 @@ export default function BambuApiTestPage() {
                             <ResultDisplay
                                 data={results.messages}
                                 error={errors.messages || ''}
-                                loading={!!loading.messages}
+                                loading={loading.messages}
                                 title="Messages Response"
                             />
                         </CardContent>

@@ -1,7 +1,7 @@
 "use client"
 import {Battery, Clock, Droplets, Pause, Play, Settings, Square, Thermometer, Wifi} from "lucide-react";
 import {useEffect, useState} from "react";
-import {GlassCard} from "@/components/custom/glass-card";
+import {GlassCard} from "@/components/custom/ui/glass-card";
 
 const BambuLabVisionUI = () => {
     const [printers, setPrinters] = useState([

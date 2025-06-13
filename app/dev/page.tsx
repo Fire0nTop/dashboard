@@ -1,4 +1,4 @@
-import ResizableCardGrid from "@/app/tests/grid-test";
+import ResizableCardGrid from "@/app/dev/grid-test";
 
 
 export default function TestPage() {

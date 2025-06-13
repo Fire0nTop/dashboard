@@ -30,8 +30,8 @@ import {
     ChartTooltipContent,
 } from "@/components/ui/chart"
 
-import { useSettings } from "@/app/settings/SettingsContext"
-import {GlassCard} from "@/components/custom/glass-card";
+import { useSettings } from "@/context/SettingsContext"
+import {GlassCard} from "@/components/custom/ui/glass-card";
 
 interface Hour {
     time: string

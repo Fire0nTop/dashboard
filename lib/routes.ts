@@ -16,7 +16,3 @@ export const ROUTE_DEFINITIONS = {
 export const ROUTES = Object.fromEntries(
     Object.entries(ROUTE_DEFINITIONS).map(([key, { path }]) => [key, path])
 ) as { [K in keyof typeof ROUTE_DEFINITIONS]: typeof ROUTE_DEFINITIONS[K]['path'] }
-
-// Auto-generated types
-export type RouteKey = keyof typeof ROUTE_DEFINITIONS
-export type RoutePath = typeof ROUTE_DEFINITIONS[RouteKey]['path']

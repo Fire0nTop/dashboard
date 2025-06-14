@@ -1,7 +1,7 @@
 "use client";
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { SettingsState } from "@/app/(protected)/settings/settings-types";
-import { settingsConfig } from "@/app/(protected)/settings/settings-config";
+import { SettingsState } from "@/types/settings-types";
+import { settingsConfig } from "@/lib/settings-config";
 
 const STORAGE_KEY = "settings";
 

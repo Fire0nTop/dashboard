@@ -1,7 +1,8 @@
 "use client"
 import { useRouter } from 'next/navigation'
 import { useCallback } from 'react'
-import { ROUTE_DEFINITIONS } from '@/lib/routes'
+import {ROUTE_DEFINITIONS} from '@/lib/routes'
+import {RouteDefinitionsPath} from "@/types/routes";
 
 // Helper to convert route key to method name (HOME -> goHome)
 type RouteMethodName<K extends keyof typeof ROUTE_DEFINITIONS> =
@@ -13,15 +14,15 @@ type NavigationMethods = {
 }
 
 export function useNavigation(): NavigationMethods & {
-    push: (path: string) => void
-    replace: (path: string) => void
+    push: (path: RouteDefinitionsPath) => void
+    replace: (path: RouteDefinitionsPath) => void
     back: () => void
     forward: () => void
 } {
     const router = useRouter()
 
-    const push = useCallback((path: string) => router.push(path), [router])
-    const replace = useCallback((path: string) => router.replace(path), [router])
+    const push = useCallback((path: RouteDefinitionsPath) => router.push(path), [router])
+    const replace = useCallback((path: RouteDefinitionsPath) => router.replace(path), [router])
     const back = useCallback(() => router.back(), [router])
     const forward = useCallback(() => router.forward(), [router])
 

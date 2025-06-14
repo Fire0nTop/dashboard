@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { ReactNode } from 'react'
-import { RoutePath } from '@/lib/routes'
+import { RouteDefinitionsPath } from '@/types/routes'
 
 interface SafeLinkProps {
-    href: RoutePath
+    href: RouteDefinitionsPath
     children: ReactNode
     className?: string
     replace?: boolean

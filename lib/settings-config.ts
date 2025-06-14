@@ -1,5 +1,5 @@
 import {Palette, Plug} from "lucide-react";
-import {SettingsConfig} from "@/app/(protected)/settings/settings-types";
+import {SettingsConfig} from "@/types/settings-types";
 
 /**
  * Settings configuration object for the application.

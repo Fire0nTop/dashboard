@@ -1,7 +1,7 @@
 'use client';
 
 import { useAuth } from '@/context/AuthContext';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import LoadingProfile from "@/components/custom/components/auth/loading-profile";
 import {useNavigation} from "@/hooks/useNavigation";
 

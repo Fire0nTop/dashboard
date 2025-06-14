@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface Setting {
     key: string;
     label: string;

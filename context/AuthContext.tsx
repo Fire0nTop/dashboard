@@ -2,9 +2,9 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { User } from '@supabase/supabase-js';
-import { supabase } from '@/lib/supabase/client';
-import {Profile} from "@/types/auth/profile";
-import {useNavigation} from "@/hooks/useNavigation";
+import { Profile } from "@/types/auth/profile";
+import { useNavigation } from "@/hooks/useNavigation";
+import { authApi } from '@/lib/';
 
 type AuthContextType = {
     user: User | null;
@@ -25,35 +25,28 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [loading, setLoading] = useState(true);
     const [userProfile, setUserProfile] = useState<Profile | null>(null);
 
-    const {goLogin} = useNavigation()
+    const { goLogin } = useNavigation();
 
     useEffect(() => {
         const fetchUserData = async (currentUser: User | null) => {
             if (currentUser) {
-                const { data: currentProfile, error } = await supabase
-                    .rpc('get_current_user_profile');
-
-                // Fixed: currentProfile is a single object, not an array
-                if (!error && currentProfile) {
-                    setUserProfile(currentProfile as Profile);
-                } else {
-                    console.error('Error fetching profile:', error);
-                    setUserProfile(null);
-                }
+                const profile = await authApi.getCurrentUserProfile();
+                setUserProfile(profile);
             } else {
                 setUserProfile(null);
             }
-
             setLoading(false);
         };
 
-        supabase.auth.getSession().then(({ data: { session } }) => {
+        // Initial session check
+        authApi.getSession().then(({ data: { session } }) => {
             const currentUser = session?.user ?? null;
             setUser(currentUser);
             fetchUserData(currentUser);
         });
 
-        const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+        // Listen for auth changes
+        const { data: listener } = authApi.onAuthStateChange((_event, session) => {
             const currentUser = session?.user ?? null;
             setUser(currentUser);
             fetchUserData(currentUser);
@@ -65,10 +58,15 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }, []);
 
     const logout = async () => {
-        await supabase.auth.signOut();
-        setUser(null);
-        setUserProfile(null);
-        goLogin()
+        try {
+            await authApi.signOut();
+            setUser(null);
+            setUserProfile(null);
+            goLogin();
+        } catch (error) {
+            console.error('Logout failed:', error);
+            // You might want to handle this error differently
+        }
     };
 
     return (

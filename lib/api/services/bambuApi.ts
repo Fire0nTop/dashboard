@@ -1,15 +1,14 @@
 import {
-    ApiResponse,
+    ApiResponse, BambuProfile,
     Device, DeviceVersionInfo,
     LoginRequest,
     LoginResponse, MessageHit, NotificationResponse,
-    Profile,
     Project, SlicerResource,
     SlicerSetting,
     Task, TaskResponse,
     TTCodeResponse,
     UserPreferences
-} from "@/lib/api/types/api";
+} from "@/types";
 
 class BambuLabApiService {
     private baseUrl = 'https://api.bambulab.com';
@@ -219,8 +218,8 @@ class BambuLabApiService {
         );
     }
 
-    async getProfile(profileId: string, modelId: string): Promise<Profile> {
-        return this.makeRequest<Profile>(
+    async getProfile(profileId: string, modelId: string): Promise<BambuProfile> {
+        return this.makeRequest<BambuProfile>(
             `/v1/iot-service/api/user/profile/${profileId}?model_id=${modelId}`
         );
     }

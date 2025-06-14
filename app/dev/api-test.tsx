@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Loader2, CheckCircle, XCircle, Eye, EyeOff } from 'lucide-react';
-import {LoginRequest} from "@/lib/api/types/api";
+import {LoginRequest} from "@/types/api";
 import {bambuApi} from "@/lib/api/services/bambuApi";
 
 export default function BambuApiTestPage() {

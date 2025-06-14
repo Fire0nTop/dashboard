@@ -1,6 +1,7 @@
 "use client"
 import clsx from 'clsx';
 import {useSettings} from "@/context/SettingsContext";
+import React from "react";
 
 export const BackgroundWrapper = ({
                                       children,

@@ -74,7 +74,7 @@ export interface Project {
     content: string;
     create_time: string;
     update_time: string;
-    profiles?: Profile[];
+    profiles?: BambuProfile[];
     download_url?: string | null;
     download_md5?: string | null;
     keystore_xml?: string | null;
@@ -82,7 +82,7 @@ export interface Project {
     upload_ticket?: string | null;
 }
 
-export interface Profile {
+export interface BambuProfile {
     profile_id: string;
     model_id: string;
     status: string;

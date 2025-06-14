@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import { bambuApi } from '../services/bambuApi';
-import type { Device, Project, UserPreferences, TaskResponse } from '../types/api';
+import { bambuApi } from '@/lib/api/services/bambuApi';
+import type { Device, Project, UserPreferences, TaskResponse } from '@/lib/api/types/api';
 
 export function useAuth() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);

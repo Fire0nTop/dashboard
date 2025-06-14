@@ -16,7 +16,7 @@ export const BackgroundWrapper = ({
     return (
         <div
             className={clsx(
-                "min-h-svh w-svw overflow-auto bg-cover bg-center p-4 md:p-10",
+                "w-full h-full overflow-auto bg-cover bg-center p-4 md:p-10",
                 className
             )}
             style={{

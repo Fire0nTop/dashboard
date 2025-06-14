@@ -9,6 +9,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import {cn} from "@/lib/utils";
 import {useTabSwitcher} from "@/components/custom/components/auth/login-component";
+import {useNavigation} from "@/hooks/useNavigation";
+import {ROUTES} from "@/lib/routes";
 
 export function LoginForm({
                               className,
@@ -18,9 +20,10 @@ export function LoginForm({
     const [password, setPassword] = useState("");
     const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
-    const router = useRouter();
-
+    useRouter();
     const { switchToTab } = useTabSwitcher();
+
+    const {goHome} = useNavigation();
 
     const handleSwitchToSignUp = () => {
         switchToTab("signup");
@@ -39,7 +42,7 @@ export function LoginForm({
             });
             if (error) throw error;
             // Update this route to redirect to an authenticated route. The user already has an active session.
-            router.push("/protected");
+            goHome()
         } catch (error: unknown) {
             setError(error instanceof Error ? error.message : "An error occurred");
         } finally {
@@ -66,7 +69,7 @@ export function LoginForm({
                         <div className="flex items-center">
                             <Label htmlFor="password">Password</Label>
                             <Link
-                                href="/app/(auth)/forgot-password"
+                                href={ROUTES.HOME} //TODO: change to Forgot your password page
                                 className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
                             >
                                 Forgot your password?

@@ -6,8 +6,9 @@ import {Button} from "@/components/custom/ui/button";
 import {Input} from "@/components/ui/input";
 import {Label} from "@/components/ui/label";
 import {useRouter} from "next/navigation";
-import {useState} from "react";
+import React, {useState} from "react";
 import {useTabSwitcher} from "@/components/custom/components/auth/login-component";
+import {useNavigation} from "@/hooks/useNavigation";
 
 export function SignUpForm({
                                className,
@@ -18,9 +19,11 @@ export function SignUpForm({
     const [repeatPassword, setRepeatPassword] = useState("");
     const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
-    const router = useRouter();
-
+    useRouter();
     const { switchToTab } = useTabSwitcher();
+
+    const {goHome} = useNavigation();
+
 
     const handleSwitchToLogin = () => {
         switchToTab("login");
@@ -47,7 +50,7 @@ export function SignUpForm({
                 },
             });
             if (error) throw error;
-            router.push("/auth/sign-up-success");
+            goHome(); //TODO: go to sign-up-success
         } catch (error: unknown) {
             setError(error instanceof Error ? error.message : "An error occurred");
         } finally {

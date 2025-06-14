@@ -1,11 +1,9 @@
-"use client";
 import {BackgroundWrapper} from "@/components/custom/ui/background-wrapper";
 
-export default function Home() {
-
+export default function TeamsPage() {
     return (
         <BackgroundWrapper>
-            <p>Public Homepage</p>
+            <p>Teams page</p>
         </BackgroundWrapper>
-    );
+    )
 }

@@ -53,25 +53,3 @@ export function LoginComponent({ defaultValue = "login" }: LoginComponentProps) 
         </TabContext.Provider>
     );
 }
-
-// Example usage in LoginForm component:
-/*
-import { useTabSwitcher } from './login-component';
-
-export function LoginForm() {
-  const { switchToTab } = useTabSwitcher();
-
-  const handleSwitchToSignUp = () => {
-    switchToTab("signup");
-  };
-
-  return (
-    <div>
-      // Your login form content
-      <button onClick={handleSwitchToSignUp}>
-        Don't have an account? Sign up
-      </button>
-    </div>
-  );
-}
-*/

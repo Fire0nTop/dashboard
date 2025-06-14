@@ -13,12 +13,6 @@ import {NavUser} from "@/components/custom/components/sidebar/nav-user";
 import React from "react";
 import {SidebarConfig} from "@/lib/sidebar-config";
 
-const user = {
-        name: "Tom",
-        email: "tomIstGeil@geilo.ficken",
-        avatar: "https://avatars.githubusercontent.com/u/162488526?v=4",
-    }
-
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     return (

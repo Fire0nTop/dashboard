@@ -1,19 +1,12 @@
 "use client"
 
 import {
-    BadgeCheck,
-    Bell,
     ChevronsUpDown,
-    CreditCard,
-    LogOut,
-    Sparkles,
+    LogIn,
+    LogOut, Settings,
+    User,
 } from "lucide-react"
 
-import {
-    Avatar,
-    AvatarFallback,
-    AvatarImage,
-} from "@/components/ui/avatar"
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -30,19 +23,18 @@ import {
     useSidebar,
 } from "@/components/ui/sidebar"
 import {useAuth} from "@/context/AuthContext";
+import UserAvatar from "@/components/custom/ui/avatar";
+import {useNavigation} from "@/hooks";
 
-export function NavUser({
-                            user,
-                        }: {
-    user: {
-        name: string
-        email: string
-        avatar: string
-    }
-}) {
+export function NavUser() {
     const { isMobile } = useSidebar()
 
-    const {logout} = useAuth()
+    const {logout,userProfile,user} = useAuth()
+    const {goLogin,goSettings,goProfile} = useNavigation()
+
+    const user_name: string | undefined  = userProfile?.display_name ? userProfile?.display_name : undefined
+    const avatar_url: string | undefined = userProfile?.avatar_url ? userProfile?.avatar_url : undefined
+    const user_email: string | undefined = user?.email ? user?.email : undefined
 
     return (
         <SidebarMenu>
@@ -53,13 +45,13 @@ export function NavUser({
                             size="lg"
                             className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
                         >
-                            <Avatar className="h-8 w-8 rounded-lg">
-                                <AvatarImage src={user.avatar} alt={user.name} />
-                                <AvatarFallback className="rounded-lg">CN</AvatarFallback>
-                            </Avatar>
+                            <UserAvatar
+                                username={user_name}
+                                src={avatar_url}
+                            />
                             <div className="grid flex-1 text-left text-sm leading-tight">
-                                <span className="truncate font-medium">{user.name}</span>
-                                <span className="truncate text-xs">{user.email}</span>
+                                <span className="truncate font-medium">{user_name ? user_name : "Not logged in"}</span>
+                                <span className="truncate text-xs">{user_email}</span>
                             </div>
                             <ChevronsUpDown className="ml-auto size-4" />
                         </SidebarMenuButton>
@@ -72,44 +64,48 @@ export function NavUser({
                     >
                         <DropdownMenuLabel className="p-0 font-normal">
                             <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-                                <Avatar className="h-8 w-8 rounded-lg">
-                                    <AvatarImage src={user.avatar} alt={user.name} />
-                                    <AvatarFallback className="rounded-lg">CN</AvatarFallback>
-                                </Avatar>
+                                <UserAvatar
+                                    username={user_name}
+                                    src={avatar_url}
+                                />
                                 <div className="grid flex-1 text-left text-sm leading-tight">
-                                    <span className="truncate font-medium">{user.name}</span>
-                                    <span className="truncate text-xs">{user.email}</span>
+                                    <span className="truncate font-medium">{user_name ? user_name : "Not logged in"}</span>
+                                    <span className="truncate text-xs">{user_email}</span>
                                 </div>
                             </div>
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuGroup>
                             <DropdownMenuItem>
-                                <Sparkles />
-                                Upgrade to Pro
-                            </DropdownMenuItem>
-                        </DropdownMenuGroup>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuGroup>
-                            <DropdownMenuItem>
-                                <BadgeCheck />
-                                Account
+                                <User />
+                                <button onClick={goProfile}>
+                                    Profile
+                                </button>
                             </DropdownMenuItem>
                             <DropdownMenuItem>
-                                <CreditCard />
-                                Billing
-                            </DropdownMenuItem>
-                            <DropdownMenuItem>
-                                <Bell />
-                                Notifications
+                                <Settings />
+                                <button onClick={goSettings}>
+                                    Settings
+                                </button>
                             </DropdownMenuItem>
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem>
-                            <LogOut />
-                            <button onClick={logout}>
-                                Log out
-                            </button>
+                            {user ? (
+                                <>
+                                    <LogOut />
+                                    <button onClick={logout}>
+                                        Log out
+                                    </button>
+                                </>
+                            ) : (
+                                <>
+                                    <LogIn />
+                                    <button onClick={goLogin}>
+                                        Log in
+                                    </button>
+                                </>
+                            )}
                         </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>

@@ -1,6 +1,6 @@
 "use client";
 
-import {cn} from "@/utils/utils";
+import {cn} from "@/lib/utils";
 import {createClient} from "@/lib/supabase/client";
 import {Button} from "@/components/custom/ui/button";
 import {Input} from "@/components/ui/input";

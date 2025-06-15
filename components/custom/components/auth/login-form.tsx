@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import {cn} from "@/utils/utils";
+import {cn} from "@/lib/utils";
 import {useTabSwitcher} from "@/components/custom/components/auth/login-component";
 import {useNavigation} from "@/hooks/useNavigation";
 import {ROUTES} from "@/lib/routes";

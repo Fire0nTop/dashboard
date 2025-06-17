@@ -5,7 +5,7 @@ import {SidebarInset, SidebarProvider, SidebarTrigger} from "@/components/ui/sid
 
 export default function ProtectedLayout({children}: { children: React.ReactNode }) {
     return (
-        <SidebarProvider>
+        <SidebarProvider defaultOpen={false}>
             <AppSidebar/>
             <SidebarInset>
                 <SidebarTrigger/>

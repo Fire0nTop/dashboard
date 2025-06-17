@@ -16,7 +16,7 @@ export default function TeamHome({ id }: { id: string }) {
         error,
         refetch,
     } = useQuery({
-        queryKey: ['userTeam', id],  // use id in queryKey to avoid cache clashes
+        queryKey: ['userTeam', id],
         queryFn: () => teamsApi.getTeamWithMembers(id),
         refetchInterval: 10000,
         refetchOnWindowFocus: false,

@@ -1,5 +1,5 @@
 import {sidebarItems} from "@/types/sidebar/sidebaritems";
-import {BracketsIcon, Home, LayoutDashboard, Settings, UserIcon, Users} from "lucide-react";
+import {BracketsIcon, CheckSquareIcon, Home, LayoutDashboard, Settings, UserIcon, Users} from "lucide-react";
 import {ROUTES} from "@/lib/routes";
 
 export const SidebarConfig: sidebarItems = [
@@ -17,6 +17,11 @@ export const SidebarConfig: sidebarItems = [
         title: "Teams",
         url: ROUTES.TEAMS,
         icon: Users,
+    },
+    {
+        title: "Task Collections",
+        url: ROUTES.TASKS,
+        icon: CheckSquareIcon,
     },
     {
         title: "Settings",

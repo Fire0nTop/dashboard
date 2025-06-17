@@ -7,6 +7,7 @@ export const ROUTE_DEFINITIONS = {
     SIGNUP: { path: '/signup', params: null },
     SETTINGS: { path: '/settings', params: null },
     TEAMS: { path: '/teams', params: null },
+    TASKS: { path: '/tasks', params: null },
     DEV: { path: '/dev', params: null },
 
     // Dynamic routes (uncomment and modify as needed)

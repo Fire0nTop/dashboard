@@ -33,14 +33,14 @@ export default function HoverUserCard({
                 />
                 <div className="space-y-0.5">
                     <HoverCardTrigger asChild>
-                        <>
+                        <div>
                             <Link className="text-sm font-medium hover:underline" href={link ? "#" : ""} hidden={!link}>
                                 {profile?.display_name}
                             </Link>
                             <p className="text-sm font-medium hover:underline" hidden={link}>
                                 {profile?.display_name}
                             </p>
-                        </>
+                        </div>
                     </HoverCardTrigger>
                     <p className="text-muted-foreground text-xs">
                         {profile?.email}

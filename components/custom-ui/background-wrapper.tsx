@@ -6,13 +6,16 @@ import React from "react";
 export const BackgroundWrapper = ({
                                       children,
                                       className,
+                                      src
                                   }: {
     children?: React.ReactNode;
     className?: string;
+    src?: string;
 }) => {
-    const { settings } = useSettings();
+    const {settings} = useSettings();
 
-    const backgroundUrl = settings["bg-url"];
+    let backgroundUrl = settings["bg-url"];
+    if (src) backgroundUrl = src;
 
     return (
         <div
@@ -22,7 +25,7 @@ export const BackgroundWrapper = ({
             )}
             style={{
                 backgroundImage: backgroundUrl ? `url(${backgroundUrl})` : undefined,
-                backgroundColor: backgroundUrl ? undefined : '#f0f0f0',
+                backgroundColor: backgroundUrl && src ? undefined : '#f0f0f0',
             }}
 
         >

@@ -32,7 +32,7 @@ export default function HoverTeamCard({
                 />
                 <div className="space-y-0.5">
                     <HoverCardTrigger asChild>
-                        <>
+                        <div>
                             <Link className="text-sm font-medium hover:underline"
                                   href={ROUTES.TEAMS + "?id=" + team?.id} hidden={!link}>{/*TODO: fix this*/}
                                 {team?.team_name}
@@ -40,7 +40,7 @@ export default function HoverTeamCard({
                             <p className="text-sm font-medium hover:underline" hidden={link}>
                                 {team?.team_name}
                             </p>
-                        </>
+                        </div>
                     </HoverCardTrigger>
                     <p className="text-muted-foreground text-xs">
                         {team?.owner_id}

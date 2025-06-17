@@ -4,7 +4,7 @@ import {Tabs, TabsList, TabsTrigger, TabsContent} from "@/components/ui/tabs";
 import {LoginForm} from "@/components/auth/login-form";
 import {SignUpForm} from "@/components/auth/sign-up-form";
 import {GalleryVerticalEnd} from "lucide-react";
-import Image from "next/image";
+import {BackgroundWrapper} from "@/components/custom-ui/background-wrapper";
 
 type TabValue = "login" | "signup";
 
@@ -71,11 +71,7 @@ export function LoginComponent({defaultValue = "login"}: LoginComponentProps) {
                     </div>
                 </div>
                 <div className="bg-muted relative hidden lg:block">
-                    <Image
-                        src="/white-background.png"
-                        alt="Image"
-                        className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
-                    />
+                    <BackgroundWrapper src={"white-background.png"}/>
                 </div>
             </div>
         </TabContext.Provider>

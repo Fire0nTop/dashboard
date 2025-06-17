@@ -1,5 +1,5 @@
 {
-  "name": "dashboard",
+  "name": "voidtalk",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -24,6 +24,7 @@
     "@radix-ui/react-tooltip": "^1.2.7",
     "@supabase/ssr": "latest",
     "@supabase/supabase-js": "latest",
+    "@tanstack/react-query": "^5.80.7",
     "@typescript-eslint/eslint-plugin": "^8.33.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

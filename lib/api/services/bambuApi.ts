@@ -53,8 +53,7 @@ class BambuLabApiService {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
-            const data = await response.json() as T;
-            return data;
+            return await response.json() as T;
         } catch (error) {
             console.error(`API request failed for ${endpoint}:`, error);
             throw error;

@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { GripVertical } from "lucide-react";
 import {Column, ColumnDragData, Task} from "@/types/kanban/tasks";
-import {TaskCard} from "@/components/custom/components/kanban/task-card";
-import {GlassCard} from "@/components/custom/ui/glass-card";
+import {TaskCard} from "@/components/kanban/task-card";
+import {GlassCard} from "@/components/custom-ui/glass-card";
 
 interface ColumnProps {
     column: Column;

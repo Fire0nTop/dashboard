@@ -6,7 +6,7 @@ import {Column, Task} from "@/types/kanban/tasks";
 import {useKanban} from "@/hooks/useLogic";
 import { useAnnouncements } from "@/hooks/useAnnouncements";
 import { TaskCard } from "./task-card";
-import {KanbanColumn} from "@/components/custom/components/kanban/column";
+import {KanbanColumn} from "@/components/kanban/column";
 import { KanbanContainer } from "./container";
 import {useEffect, useState} from "react";
 

@@ -1,6 +1,7 @@
 export const ROUTE_DEFINITIONS = {
-    HOME: { path: '/', params: null },
-    Profile: { path: '/profile', params: null },
+    HOMEPAGE: { path: '/', params: null },
+    PROFILE: { path: '/profile', params: null },
+    HOME: { path: '/home', params: null },
     DASHBOARD: { path: '/dashboard', params: null },
     LOGIN: { path: '/login', params: null },
     SIGNUP: { path: '/signup', params: null },

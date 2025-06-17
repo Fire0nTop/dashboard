@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { Kanban  } from "@/components/custom/components/kanban/Kanban";
+import { Kanban  } from "@/components/kanban/Kanban";
 import {Task} from "@/types/kanban/tasks";
-import {BackgroundWrapper} from "@/components/custom/ui/background-wrapper";
+import {BackgroundWrapper} from "@/components/custom-ui/background-wrapper";
 
 const dummyTasks: Task[] = [
     {

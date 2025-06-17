@@ -1,3 +1,4 @@
+"use client"
 import {
     Sidebar,
     SidebarContent, SidebarFooter,
@@ -9,7 +10,7 @@ import {
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import Link from "next/link";
-import {NavUser} from "@/components/custom/components/sidebar/nav-user";
+import {NavUser} from "@/components/sidebar/nav-user";
 import React from "react";
 import {SidebarConfig} from "@/lib/sidebar-config";
 

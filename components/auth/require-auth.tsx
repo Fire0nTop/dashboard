@@ -2,7 +2,7 @@
 
 import { useAuth } from '@/context/AuthContext';
 import React, { useEffect } from 'react';
-import LoadingProfile from "@/components/custom/components/auth/loading-profile";
+import LoadingProfile from "@/components/auth/loading-profile";
 import {useNavigation} from "@/hooks/useNavigation";
 
 export function RequireAuth({ children }: { children: React.ReactNode }) {

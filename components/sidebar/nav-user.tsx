@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/sidebar"
 import {useAuth} from "@/context/AuthContext";
 import {useNavigation} from "@/hooks";
-import UserCard from "@/components/custom/components/user/user-card";
+import UserCard from "@/components/user/user-card";
 
 export function NavUser() {
     const { isMobile } = useSidebar()

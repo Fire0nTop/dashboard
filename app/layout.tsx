@@ -1,11 +1,10 @@
 import type {Metadata} from "next";
 import "./globals.css";
-import {ThemeProvider} from "@/components/custom/ui/theme-provider";
+import {ThemeProvider} from "@/components/custom-ui/theme-provider";
 import {SettingsProvider} from "@/context/SettingsContext";
 import {AuthProvider} from "@/context/AuthContext";
 import React from "react";
-import {SidebarInset, SidebarProvider, SidebarTrigger} from "@/components/ui/sidebar";
-import {AppSidebar} from "@/components/custom/components/sidebar/sidebar";
+import QueryProvider from "@/context/query-provider";
 
 export const metadata: Metadata = {
     title: "The Dashboard Project",
@@ -29,13 +28,9 @@ export default function RootLayout({
         >
             <SettingsProvider>
                 <AuthProvider>
-                    <SidebarProvider>
-                        <AppSidebar/>
-                        <SidebarInset>
-                            <SidebarTrigger />
-                            {children}
-                        </SidebarInset>
-                    </SidebarProvider>
+                    <QueryProvider>
+                        {children}
+                    </QueryProvider>
                 </AuthProvider>
             </SettingsProvider>
         </ThemeProvider>

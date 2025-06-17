@@ -1,4 +1,4 @@
-import {BackgroundWrapper} from "@/components/custom/ui/background-wrapper";
+import {BackgroundWrapper} from "@/components/custom-ui/background-wrapper";
 
 export default function ForgotPasswordPage() {
     return (

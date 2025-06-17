@@ -13,9 +13,9 @@ import {
 } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "@/components/custom/ui/button";
+import { Button } from "@/components/custom-ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { settingsConfig } from "../../../lib/settings-config";
+import { settingsConfig } from "../lib/settings-config";
 import {useTheme} from "next-themes";
 
 // Define your types here or import them from a separate file if you prefer

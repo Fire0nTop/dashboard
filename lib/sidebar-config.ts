@@ -1,30 +1,36 @@
 import {sidebarItems} from "@/types/sidebar/sidebaritems";
-import {Home, LayoutDashboard, Settings, UserIcon, Users} from "lucide-react";
+import {BracketsIcon, Home, LayoutDashboard, Settings, UserIcon, Users} from "lucide-react";
+import {ROUTES} from "@/lib/routes";
 
 export const SidebarConfig: sidebarItems = [
     {
         title: "Home",
-        url: "/",
+        url: ROUTES.HOME,
         icon: Home,
     },
     {
         title: "Profile",
-        url: "/profile",
+        url: ROUTES.PROFILE,
         icon: UserIcon,
     },
     {
         title: "Teams",
-        url: "/teams",
+        url: ROUTES.TEAMS,
         icon: Users,
     },
     {
         title: "Settings",
-        url: "/settings",
+        url: ROUTES.SETTINGS,
         icon: Settings,
     },
     {
         title: "Dashboard",
-        url: "/dashboard",
+        url: ROUTES.DASHBOARD,
         icon: LayoutDashboard,
+    },
+    {
+        title: "DEV",
+        url: ROUTES.DEV,
+        icon: BracketsIcon,
     },
 ]

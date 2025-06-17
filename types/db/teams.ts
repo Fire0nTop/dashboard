@@ -1,4 +1,4 @@
-import {Profile} from "@/types";
+import {Member} from "@/types/auth/member";
 
 export interface Team {
     id: string;
@@ -12,6 +12,8 @@ export interface Team {
     avatar_url: string | null;
 }
 
-export interface TeamWithMembers extends Omit<Team, 'member_count'> {
-    members: Profile[];
+export interface TeamWithMembers extends Team{
+    members: Member[];
 }
+
+export type EditableTeam = Omit<Team, 'id' | 'created_at' | 'updated_at' | 'is_owner' | 'member_count'>;

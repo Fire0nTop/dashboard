@@ -1,6 +1,6 @@
 import React from "react";
 import { Profile } from "@/types";
-import UserCard from "@/components/custom/components/user/user-card";
+import UserCard from "@/components/user/user-card";
 import {ScrollArea} from "@/components/ui/scroll-area";
 
 interface UserListProps {

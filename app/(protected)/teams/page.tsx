@@ -1,39 +1,26 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { BackgroundWrapper } from "@/components/custom/ui/background-wrapper";
-import { teamsApi } from "@/lib";
-import {Team} from "@/types/db";
+"use client"
+import { BackgroundWrapper } from "@/components/custom-ui/background-wrapper";
+import {useSearchParams} from "next/navigation";
+import TeamsSelection from "@/components/teams/teams-selection";
+import TeamHome from "@/components/teams/team-home";
 
 export default function TeamsPage() {
-    const [teams, setTeams] = useState<Team[]>([]);
-    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const fetchTeams = async () => {
-            try {
-                const userTeams = await teamsApi.getUserTeams();
-                setTeams(userTeams);
-            } catch (error) {
-                console.error('Failed to fetch teams:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
 
-        fetchTeams();
-    }, []);
+    const searchParams = useSearchParams();
+    const id = searchParams.get('id');
 
-    if (loading) return <div>Loading...</div>;
-
-    return (
-        <BackgroundWrapper>
-            <p>Teams page</p>
-            <div>
-                {teams.map(team => (
-                    <div key={team.id}>{team.team_name}</div>
-                ))}
-            </div>
-        </BackgroundWrapper>
-    );
+    if (id === null) {
+        return (
+            <BackgroundWrapper>
+                <TeamsSelection></TeamsSelection>
+            </BackgroundWrapper>
+        );
+    } else {
+        return (
+            <BackgroundWrapper>
+                <TeamHome id={id}></TeamHome>
+            </BackgroundWrapper>
+        );
+    }
 }

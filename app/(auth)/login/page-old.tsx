@@ -1,12 +1,11 @@
-
 import {LoginComponent} from "@/components/auth/login-component";
 import {BackgroundWrapper} from "@/components/custom-ui/background-wrapper";
 
-export default function SignUpPage() {
+export default function LoginPage() {
 
     return (
         <BackgroundWrapper>
-            <LoginComponent defaultValue={"signup"}/>
+            <LoginComponent defaultValue={"login"}/>
         </BackgroundWrapper>
     )
 }

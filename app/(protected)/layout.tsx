@@ -1,7 +1,18 @@
-'use client';
-import { RequireAuth } from '@/components/custom/components/auth/require-auth';
+import {RequireAuth} from '@/components/auth/require-auth';
 import React from "react";
+import {AppSidebar} from "@/components/sidebar/sidebar";
+import {SidebarInset, SidebarProvider, SidebarTrigger} from "@/components/ui/sidebar";
 
-export default function ProtectedLayout({ children }: { children: React.ReactNode }) {
-    return <RequireAuth>{children}</RequireAuth>;
+export default function ProtectedLayout({children}: { children: React.ReactNode }) {
+    return (
+        <SidebarProvider>
+            <AppSidebar/>
+            <SidebarInset>
+                <SidebarTrigger/>
+                <RequireAuth>
+                    {children}
+                </RequireAuth>
+            </SidebarInset>
+        </SidebarProvider>
+    );
 }

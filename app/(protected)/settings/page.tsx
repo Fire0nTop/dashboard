@@ -1,9 +1,7 @@
-"use client";
-
-import Settings from "@/components/custom/components/settings";
-import {GlassCard} from "@/components/custom/ui/glass-card";
+import Settings from "@/components/settings";
+import {GlassCard} from "@/components/custom-ui/glass-card";
 import {CardContent} from "@/components/ui/card";
-import {BackgroundWrapper} from "@/components/custom/ui/background-wrapper";
+import {BackgroundWrapper} from "@/components/custom-ui/background-wrapper";
 
 export default function SettingsPage() {
 

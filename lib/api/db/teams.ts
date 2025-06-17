@@ -26,7 +26,7 @@ export const teamsApi = {
         return data?.[0] || null;
     },
 
-    async createTeam(teamData: { team_name: string; description?: string }): Promise<Team | null> {
+    async createTeam(teamData: Omit<Team, 'id'>): Promise<Team | null> {
         const { data: { user } } = await supabase.auth.getUser();
         if (!user) return null;
 
@@ -48,11 +48,11 @@ export const teamsApi = {
         return data;
     },
 
-    async updateTeam(teamId: string, updates: { team_name?: string; description?: string }): Promise<Team | null> {
+    async updateTeam(team: Team): Promise<Team | null> {
         const { data, error } = await supabase
             .from('teams')
-            .update(updates)
-            .eq('id', teamId)
+            .update(team)
+            .eq('id', team.id)
             .select()
             .single();
 

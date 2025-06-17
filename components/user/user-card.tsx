@@ -1,4 +1,4 @@
-import UserAvatar from "@/components/custom/ui/avatar";
+import UserAvatar from "@/components/custom-ui/avatar";
 import React from "react";
 import {Profile} from "@/types";
 

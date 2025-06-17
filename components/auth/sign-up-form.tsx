@@ -2,12 +2,12 @@
 
 import {cn} from "@/lib/utils";
 import {createClient} from "@/lib/supabase/client";
-import {Button} from "@/components/custom/ui/button";
+import {Button} from "@/components/custom-ui/button";
 import {Input} from "@/components/ui/input";
 import {Label} from "@/components/ui/label";
 import {useRouter} from "next/navigation";
 import React, {useState} from "react";
-import {useTabSwitcher} from "@/components/custom/components/auth/login-component";
+import {useTabSwitcher} from "@/components/auth/login-component";
 import {useNavigation} from "@/hooks/useNavigation";
 
 export function SignUpForm({

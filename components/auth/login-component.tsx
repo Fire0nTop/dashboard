@@ -1,7 +1,8 @@
+"use client"
 import { useState, createContext, useContext } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { LoginForm } from "@/components/custom/components/auth/login-form";
-import { SignUpForm } from "@/components/custom/components/auth/sign-up-form";
+import { LoginForm } from "@/components/auth/login-form";
+import { SignUpForm } from "@/components/auth/sign-up-form";
 
 type TabValue = "login" | "signup";
 

@@ -31,7 +31,7 @@ import {
 } from "@/components/ui/chart"
 
 import { useSettings } from "@/context/SettingsContext"
-import {GlassCard} from "@/components/custom/ui/glass-card";
+import {GlassCard} from "@/components/custom-ui/glass-card";
 
 interface Hour {
     time: string

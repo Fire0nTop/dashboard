@@ -1,4 +1,4 @@
-import { GlassCard } from "@/components/custom/ui/glass-card";
+import { GlassCard } from "@/components/custom-ui/glass-card";
 import { CardContent } from "@/components/ui/card";
 import * as React from "react";
 import Link from "next/link";

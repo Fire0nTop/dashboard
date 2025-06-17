@@ -1,14 +1,14 @@
 "use client";
 
 import { createClient } from "@/lib/supabase/client";
-import { Button } from "@/components/custom/ui/button";
+import { Button } from "@/components/custom-ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import {cn} from "@/lib/utils";
-import {useTabSwitcher} from "@/components/custom/components/auth/login-component";
+import {useTabSwitcher} from "@/components/auth/login-component";
 import {useNavigation} from "@/hooks/useNavigation";
 import {ROUTES} from "@/lib/routes";
 
@@ -69,7 +69,7 @@ export function LoginForm({
                         <div className="flex items-center">
                             <Label htmlFor="password">Password</Label>
                             <Link
-                                href={ROUTES.HOME} //TODO: change to Forgot your password page
+                                href={ROUTES.HOMEPAGE} //TODO: change to Forgot your password page
                                 className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
                             >
                                 Forgot your password?

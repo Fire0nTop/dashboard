@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/sidebar"
 import {useAuth} from "@/context/AuthContext";
 import {useNavigation} from "@/hooks";
-import UserCard from "@/components/user/user-card";
+import HoverUserCard from "@/components/user/hover-user-card";
 
 export function NavUser() {
     const { isMobile } = useSidebar()
@@ -40,7 +40,7 @@ export function NavUser() {
                             size="lg"
                             className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
                         >
-                            <UserCard profile={userProfile ? userProfile : undefined} />
+                            <HoverUserCard profile={userProfile ? userProfile : undefined} />
                             <ChevronsUpDown className="ml-auto size-4" />
                         </SidebarMenuButton>
                     </DropdownMenuTrigger>
@@ -51,7 +51,7 @@ export function NavUser() {
                         sideOffset={4}
                     >
                         <DropdownMenuLabel className="p-0 font-normal">
-                            <UserCard profile={userProfile ? userProfile : undefined} />
+                            <HoverUserCard profile={userProfile ? userProfile : undefined} />
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuGroup>

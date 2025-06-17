@@ -1,6 +1,7 @@
 import { cva } from "class-variance-authority";
 import { useDndContext } from "@dnd-kit/core";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import React from "react";
 
 interface ContainerProps {
     children: React.ReactNode;

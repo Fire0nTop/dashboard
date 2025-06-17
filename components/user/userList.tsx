@@ -1,7 +1,7 @@
 import React from "react";
 import { Profile } from "@/types";
-import UserCard from "@/components/user/user-card";
 import {ScrollArea} from "@/components/ui/scroll-area";
+import HoverUserCard from "@/components/user/hover-user-card";
 
 interface UserListProps {
     users: Profile[];
@@ -30,7 +30,7 @@ export default function UserList({
         <ScrollArea className={`${height} ${className}`}>
             <div className="space-y-1 p-2">
                 {users.map((user, index) => (
-                    <UserCard
+                    <HoverUserCard
                         key={user.id || user.email || index}
                         profile={user}
                         size={cardSize}

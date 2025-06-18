@@ -3,15 +3,15 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 interface UserAvatarProps {
     src?: string;
-    username?: string;
+    name?: string;
     alt?: string;
     size?: number;
     className?: string;
 }
 
-export default function UserAvatar({
+export default function CustomAvatar({
                                        src,
-                                       username,
+                                       name,
                                        alt,
                                        size = 16,
                                        className
@@ -27,8 +27,8 @@ export default function UserAvatar({
             .slice(0, 2);
     };
 
-    const initials = getInitials(username);
-    const displayAlt = alt || username || "User";
+    const initials = getInitials(name);
+    const displayAlt = alt || name || "User";
 
     return (
         <Avatar className={className}>

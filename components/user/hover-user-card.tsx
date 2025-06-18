@@ -4,7 +4,7 @@ import {
     HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import {Profile} from "@/types";
-import UserAvatar from "@/components/custom-ui/avatar";
+import CustomAvatar from "@/components/custom-ui/custom-avatar";
 import React from "react";
 import Link from "next/link";
 
@@ -25,8 +25,8 @@ export default function HoverUserCard({
     return (
         <HoverCard>
             <div className="flex items-center gap-3">
-                <UserAvatar
-                    username={profile?.display_name ? profile.display_name : undefined}
+                <CustomAvatar
+                    name={profile?.display_name ? profile.display_name : undefined}
                     src={profile?.avatar_url ? profile.avatar_url : undefined}
                     size={size}
                     alt="Avatar"
@@ -50,8 +50,8 @@ export default function HoverUserCard({
             <HoverCardContent>
                 <div className="space-y-3">
                     <div className="flex items-center gap-3">
-                        <UserAvatar
-                            username={profile?.display_name ? profile.display_name : undefined}
+                        <CustomAvatar
+                            name={profile?.display_name ? profile.display_name : undefined}
                             src={profile?.avatar_url ? profile.avatar_url : undefined}
                             size={size * 2}
                             alt="Avatar"
@@ -66,20 +66,20 @@ export default function HoverUserCard({
                     </p>
                     <div className="flex items-center gap-2">
                         <div className="flex -space-x-1.5" hidden={!show_friend}>
-                            <UserAvatar
-                                username={profile?.display_name ? profile.display_name : undefined}
+                            <CustomAvatar
+                                name={profile?.display_name ? profile.display_name : undefined}
                                 src={profile?.avatar_url ? profile.avatar_url : undefined}
                                 size={size}
                                 alt="Avatar"
                             />{/*TODO: fix this*/}
-                            <UserAvatar
-                                username={profile?.display_name ? profile.display_name : undefined}
+                            <CustomAvatar
+                                name={profile?.display_name ? profile.display_name : undefined}
                                 src={profile?.avatar_url ? profile.avatar_url : undefined}
                                 size={size}
                                 alt="Avatar"
                             />{/*TODO: fix this*/}
-                            <UserAvatar
-                                username={profile?.display_name ? profile.display_name : undefined}
+                            <CustomAvatar
+                                name={profile?.display_name ? profile.display_name : undefined}
                                 src={profile?.avatar_url ? profile.avatar_url : undefined}
                                 size={size}
                                 alt="Avatar"

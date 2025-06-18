@@ -3,7 +3,7 @@ import {
     HoverCardContent,
     HoverCardTrigger,
 } from "@/components/ui/hover-card"
-import UserAvatar from "@/components/custom-ui/avatar";
+import CustomAvatar from "@/components/custom-ui/custom-avatar";
 import React from "react";
 import {Team} from "@/types/db";
 import {ROUTES} from "@/lib";
@@ -24,8 +24,8 @@ export default function HoverTeamCard({
     return (
         <HoverCard>
             <div className="flex items-center gap-3">
-                <UserAvatar
-                    username={team?.team_name ? team.team_name : undefined}
+                <CustomAvatar
+                    name={team?.team_name ? team.team_name : undefined}
                     src={team?.avatar_url ? team.avatar_url : undefined}
                     size={size}
                     alt="Avatar"
@@ -50,8 +50,8 @@ export default function HoverTeamCard({
             <HoverCardContent>
                 <div className="space-y-3">
                     <div className="flex items-center gap-3">
-                        <UserAvatar
-                            username={team?.team_name ? team.team_name : undefined}
+                        <CustomAvatar
+                            name={team?.team_name ? team.team_name : undefined}
                             src={team?.avatar_url ? team.avatar_url : undefined}
                             size={size * 2}
                             alt="Avatar"
